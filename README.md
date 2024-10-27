@@ -9,7 +9,18 @@ are assigned to listen to the score increase function and call it when they hit 
 The builder pattern is used when spawning enemies. The spawner picks a random enemy type to spawn and creates it with an EnemyBuilder.
 This EnemyBuilder is used to 'build' the enemy through an enemy prefab.
 
+I used Json Serialization to save and load the positions of the enemies and the player. The ISaveable interface is used to locate
+anything that needs saving.
+
+I used the binary formatter to save and load the current score.
+
+[A, D] -> Strafe left and right
+[Space] -> Shoot
+[S] -> Save
+[L] -> Load
+
 This is a short video showcasing the gameplay: https://www.youtube.com/watch?v=p0QagQiQlL4
+This is a short video showcasing the save system: https://youtu.be/ojChuKYMZ_M 
 
 Thank you!
 
