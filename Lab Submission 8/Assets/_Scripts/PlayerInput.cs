@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     [Header("Input Containers")]
     [SerializeField] private Vector2 moveDirection;
     [SerializeField] private UnityEvent onShoot;
+    [SerializeField] private UnityEvent onSave;
+    [SerializeField] private UnityEvent onLoad;
 
 
     private void Awake() {
@@ -19,6 +21,8 @@ public class PlayerInput : MonoBehaviour
 
         pControls.Keyboard.Move.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         pControls.Keyboard.Shoot.started += ctx => onShoot.Invoke();
+        pControls.Keyboard.Save.started += ctx => onSave.Invoke();
+        pControls.Keyboard.Load.started += ctx => onLoad.Invoke();
     }
 
 #region Input Getters

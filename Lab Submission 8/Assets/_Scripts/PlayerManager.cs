@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, ISaveable
 {
     // Runtime
     PlayerInput pInput;
@@ -108,6 +108,23 @@ public class PlayerManager : MonoBehaviour
         totalScore++;
 
         scoreUI.text = totalScore.ToString();
+    }
+
+    // Set our score.
+    public void SetScore(int value){
+        totalScore = value;
+
+        scoreUI.text = totalScore.ToString();
+    }
+
+    public SaveData Save()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Load(SaveData data)
+    {
+        throw new System.NotImplementedException();
     }
 #endregion
 }

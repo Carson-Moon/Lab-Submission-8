@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ISaveable
 {
     [Header("Enemy Attributes")]
     public float health;
@@ -14,6 +14,16 @@ public class Enemy : MonoBehaviour
         this.health = health;
         this.moveSpeed = moveSpeed;
         this.moveDirection = direction;
+    }
+
+    public void Load(SaveData data)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public SaveData Save()
+    {
+        throw new System.NotImplementedException();
     }
 
     private void Update() {

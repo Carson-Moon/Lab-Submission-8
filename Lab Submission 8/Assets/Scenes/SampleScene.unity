@@ -1094,6 +1094,7 @@ GameObject:
   - component: {fileID: 2145549478}
   - component: {fileID: 2145549480}
   - component: {fileID: 2145549479}
+  - component: {fileID: 2145549481}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   poolHolder: {fileID: 1936695915}
   projectile: {fileID: 4125386042875150929, guid: fe88ec8192f133c43bf07d8f3fc2f464, type: 3}
   shotPosition: {fileID: 1084955794}
+  cooldown: 0
   cooldownLength: 0.25
   totalScore: 0
   scoreUI: {fileID: 1885046894}
@@ -1211,6 +1213,73 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onSave:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2145549481}
+        m_TargetAssemblyTypeName: SavingService, Assembly-CSharp
+        m_MethodName: SaveTransforms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2145549481}
+        m_TargetAssemblyTypeName: SavingService, Assembly-CSharp
+        m_MethodName: SaveScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLoad:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2145549481}
+        m_TargetAssemblyTypeName: SavingService, Assembly-CSharp
+        m_MethodName: LoadTransforms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2145549481}
+        m_TargetAssemblyTypeName: SavingService, Assembly-CSharp
+        m_MethodName: LoadScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2145549481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145549476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ea75ec696b7164388825c5f1bb73f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8571689533627217602, guid: b20d2111cb2d58f45a8da4dd0cd5afde, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
